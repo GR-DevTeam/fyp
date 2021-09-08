@@ -12,7 +12,7 @@ const StyledSidebarButton = styled.button`
   border: none;
   background: none;
   display: flex;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
   font-size: 2rem;
   padding: 1rem 1rem;
@@ -23,7 +23,8 @@ const StyledSidebarButton = styled.button`
   }
 `;
 const Text = styled.div`
-  padding: 0 0 0.4rem 0;
+  padding-left: 0.4rem;
+  padding-bottom: 0.5rem;
 `;
 const Icon = styled(FontAwesomeIcon)``;
 
