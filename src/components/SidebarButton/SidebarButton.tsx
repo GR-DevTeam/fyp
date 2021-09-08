@@ -8,6 +8,7 @@ export interface ISidebarButton {
 }
 
 const StyledSidebarButton = styled.button`
+  color: white;
   cursor: pointer;
   border: none;
   background: none;
