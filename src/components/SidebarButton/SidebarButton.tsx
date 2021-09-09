@@ -27,12 +27,11 @@ const Text = styled.div`
   padding-left: 0.4rem;
   padding-bottom: 0.5rem;
 `;
-const Icon = styled(FontAwesomeIcon)``;
 
 const SidebarButton: React.FC<ISidebarButton> = (props) => {
   return (
     <StyledSidebarButton>
-      <Icon icon={props.icon} />
+      <FontAwesomeIcon icon={props.icon} />
       <Text>{props.text}</Text>
     </StyledSidebarButton>
   );
