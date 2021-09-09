@@ -1,10 +1,9 @@
 import React from 'react';
-import { faMale, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import InputText from './components/shared/InputText/InputText';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme/theme';
 import GlobalStyle from './theme/GlobalTheme';
-import SidebarButton from './components/SidebarButton/SidebarButton';
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -12,7 +11,6 @@ function App() {
       <div className="App">
         {/* Aca van para testear los componentes hasta que Dani termine el #9 */}
         <InputText icon={faSearch} />
-        <SidebarButton icon={faMale} text="Hola Maxi" />
       </div>
     </ThemeProvider>
   );
