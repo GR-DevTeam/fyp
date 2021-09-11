@@ -7,13 +7,14 @@ import {
   faHome,
   faMap,
   faMapMarkerAlt,
+  faPassport,
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   height: 90%;
-  width: 15%;
-  background-color: #0e0d0b;
+  width: 12.5%;
+  background-color: ${(props) => props.theme.colors.dark};
   display: grid;
   align-items: center;
 `;
@@ -34,7 +35,7 @@ const NavItem = styled.li`
   width: 90%;
   height: 10%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 `;
 
@@ -52,8 +53,7 @@ const Sidebar = () => {
           <SidebarButton icon={faMapMarkerAlt} text={'Saved Places'} />
         </NavItem>
         <NavItem>
-          {/*  No encontre el icono Vector  */}
-          {/* <SidebarButton icon={faVector} text={'Past Trips'} /> */}
+          <SidebarButton icon={faPassport} text={'Past Trips'} />
         </NavItem>
         <NavItem>
           <SidebarButton icon={faUserFriends} text={'About us'} />
