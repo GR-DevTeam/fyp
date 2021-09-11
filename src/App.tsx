@@ -1,18 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import Sidebar from './components/Sidebar/Sidebar';
 
-const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-`;
+import { ThemeProvider } from 'styled-components';
+import theme from './theme/theme';
+import GlobalStyle from './theme/GlobalTheme';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
-    <Wrapper>
-      <Sidebar />
-      {/* Aca van para testear los componentes hasta que Dani termine el #9 */}
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div className="App">
+        <Sidebar />
+      </div>
+    </ThemeProvider>
   );
 }
 
