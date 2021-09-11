@@ -15,8 +15,8 @@ const StyledSidebarButton = styled.button`
   display: flex;
   justify-content: top;
   align-items: center;
-  font-size: 2rem;
-  padding: 1rem 1rem;
+  font-size: 1.4rem;
+  padding: 1rem;
   :hover {
     transition: all 0.3s ease;
     color: ${(props) => props.theme.colors.primary};
@@ -25,7 +25,6 @@ const StyledSidebarButton = styled.button`
 `;
 const Text = styled.div`
   padding-left: 0.4rem;
-  padding-bottom: 0.5rem;
 `;
 
 const SidebarButton: React.FC<ISidebarButton> = (props) => {
