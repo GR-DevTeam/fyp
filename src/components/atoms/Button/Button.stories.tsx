@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from './Button';
 export default {
-  title: 'Components/Basic/Button',
+  title: 'Components/Atoms/Button',
   component: Button,
   argTypes: {
     icon: { control: { disable: true } },
