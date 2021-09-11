@@ -19,7 +19,8 @@ const StyledSidebarButton = styled.button`
   padding: 1rem 1rem;
   :hover {
     transition: all 0.3s ease;
-    color: ${(props) => props.theme.colors.primary};
+    /* color: {(props) => props.theme.colors.primary}; */
+    color: #fe8f29;
     transform: translateX(10px);
   }
 `;

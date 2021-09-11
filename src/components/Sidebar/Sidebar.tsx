@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import SidebarButton from '../SidebarButton/SidebarButton';
+
+import {
+  faHome,
+  faMap,
+  faMapMarkerAlt,
+  faUserFriends,
+} from '@fortawesome/free-solid-svg-icons';
+
 const Wrapper = styled.div`
   height: 90%;
   width: 15%;
@@ -33,11 +42,22 @@ const Sidebar = () => {
   return (
     <Wrapper>
       <Navigation>
-        <NavItem>{/* component */}</NavItem>
-        <NavItem>{/* component */}</NavItem>
-        <NavItem>{/* component */}</NavItem>
-        <NavItem>{/* component */}</NavItem>
-        <NavItem>{/* component */}</NavItem>
+        <NavItem>
+          <SidebarButton icon={faHome} text={'Home'} />
+        </NavItem>
+        <NavItem>
+          <SidebarButton icon={faMap} text={'Planning'} />
+        </NavItem>
+        <NavItem>
+          <SidebarButton icon={faMapMarkerAlt} text={'Saved Places'} />
+        </NavItem>
+        <NavItem>
+          {/*  No encontre el icono Vector  */}
+          {/* <SidebarButton icon={faVector} text={'Past Trips'} /> */}
+        </NavItem>
+        <NavItem>
+          <SidebarButton icon={faUserFriends} text={'About us'} />
+        </NavItem>
       </Navigation>
     </Wrapper>
   );
