@@ -1,17 +1,13 @@
 import React from 'react';
 import Navbar from './Component/Navbar';
 
-
-
-
-function App() {
+const App = () => {
   return (
     <div>
-      <Navbar />
-      hola juancarlo
+      <Navbar/>
+      asdka
     </div>
   )
 }
 
-
-export default App;
+export default App
