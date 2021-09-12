@@ -9,8 +9,8 @@ export interface IInputText {
 }
 
 const Icon = styled(FontAwesomeIcon)`
-  color: #3a3a3a;
-  background: #f0f0f0;
+  color: ${(props) => props.theme.colors.dark};
+  background: ${(props) => props.theme.colors.light};
   flex: 0 0;
   padding: 1rem;
   border-radius: 0 5px 5px 0;
