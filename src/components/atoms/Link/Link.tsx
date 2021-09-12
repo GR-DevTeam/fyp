@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 export interface ILink {
   text: string;
-  icon: IconDefinition;
+  icon?: IconDefinition;
+  color: string;
 }
 
-const StyledLink = styled.button`
-  color: white;
+const StyledLink = styled.button<ILink>`
+  color: ${(props) => props.color};
+  background: none;
   cursor: pointer;
   border: none;
-  background: none;
   display: flex;
   justify-content: top;
   align-items: center;
@@ -19,8 +20,7 @@ const StyledLink = styled.button`
   padding: 1rem;
   :hover {
     transition: all 0.3s ease;
-    //color: {(props) => props.theme.colors.primary};
-    color: #fe8f29;
+    color: ${(props) => props.theme.colors.primary};
     transform: translateX(10px);
   }
 `;
@@ -30,8 +30,8 @@ const Text = styled.div`
 
 const SidebarButton: React.FC<ILink> = (props) => {
   return (
-    <StyledLink>
-      <FontAwesomeIcon icon={props.icon} />
+    <StyledLink {...props}>
+      <FontAwesomeIcon icon={props.icon as IconDefinition} />
       <Text>{props.text}</Text>
     </StyledLink>
   );
