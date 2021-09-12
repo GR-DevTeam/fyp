@@ -4,7 +4,7 @@ import InputText from './InputText';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  title: 'Components/Basic/Input',
+  title: 'Components/Atoms/Input',
   component: InputText,
 } as ComponentMeta<typeof InputText>;
 
