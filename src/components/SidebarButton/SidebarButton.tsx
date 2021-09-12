@@ -3,7 +3,7 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 export interface ISidebarButton {
-  text?: string;
+  text: string;
   icon: IconDefinition;
 }
 
