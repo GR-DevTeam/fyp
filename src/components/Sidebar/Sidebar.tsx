@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SidebarButton from '../SidebarButton/SidebarButton';
+import Link from '../atoms/Link/Link';
 
 import {
   faHome,
@@ -44,19 +44,19 @@ const Sidebar = () => {
     <Wrapper>
       <Navigation>
         <NavItem>
-          <SidebarButton icon={faHome} text={'Home'} />
+          <Link icon={faHome} text={'Home'} />
         </NavItem>
         <NavItem>
-          <SidebarButton icon={faMap} text={'Planning'} />
+          <Link icon={faMap} text={'Planning'} />
         </NavItem>
         <NavItem>
-          <SidebarButton icon={faMapMarkerAlt} text={'Saved Places'} />
+          <Link icon={faMapMarkerAlt} text={'Saved Places'} />
         </NavItem>
         <NavItem>
-          <SidebarButton icon={faPassport} text={'Past Trips'} />
+          <Link icon={faPassport} text={'Past Trips'} />
         </NavItem>
         <NavItem>
-          <SidebarButton icon={faUserFriends} text={'About us'} />
+          <Link icon={faUserFriends} text={'About us'} />
         </NavItem>
       </Navigation>
     </Wrapper>
