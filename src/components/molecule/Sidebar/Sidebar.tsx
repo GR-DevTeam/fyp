@@ -1,8 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import Link from '../atoms/Link/Link';
-
+import styled, { useTheme } from 'styled-components';
 import {
   faHome,
   faMap,
@@ -10,6 +7,7 @@ import {
   faPassport,
   faUserFriends,
 } from '@fortawesome/free-solid-svg-icons';
+import Link from '../../atoms/Link/Link';
 
 const Wrapper = styled.div`
   height: 90%;
@@ -40,23 +38,38 @@ const NavItem = styled.li`
 `;
 
 const Sidebar = () => {
+  // Temporal solution for the coloring of the link
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <Navigation>
         <NavItem>
-          <Link icon={faHome} text={'Home'} />
+          <Link color={theme.colors.light} icon={faHome} text={'Home'} />
         </NavItem>
         <NavItem>
-          <Link icon={faMap} text={'Planning'} />
+          <Link color={theme.colors.light} icon={faMap} text={'Planning'} />
         </NavItem>
         <NavItem>
-          <Link icon={faMapMarkerAlt} text={'Saved Places'} />
+          <Link
+            color={theme.colors.light}
+            icon={faMapMarkerAlt}
+            text={'Saved Places'}
+          />
         </NavItem>
         <NavItem>
-          <Link icon={faPassport} text={'Past Trips'} />
+          <Link
+            color={theme.colors.light}
+            icon={faPassport}
+            text={'Past Trips'}
+          />
         </NavItem>
         <NavItem>
-          <Link icon={faUserFriends} text={'About us'} />
+          <Link
+            color={theme.colors.light}
+            icon={faUserFriends}
+            text={'About us'}
+          />
         </NavItem>
       </Navigation>
     </Wrapper>
