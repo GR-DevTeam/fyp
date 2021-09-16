@@ -1,13 +1,17 @@
 import React from 'react';
-import Navbar from './Component/Navbar';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme/theme';
+import GlobalStyle from './theme/GlobalStyle';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Navbar />
-      this is a testo
-    </div>
-  )
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div className='App'>
+        {/* Aca van para testear los componentes hasta que Dani termine el #9 */}
+      </div>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
