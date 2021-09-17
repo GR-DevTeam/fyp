@@ -45,14 +45,25 @@ const Sidebar = () => {
     <Wrapper>
       <Navigation>
         <NavItem>
-          <Link color={theme.colors.light} icon={faHome} text={'Home'} />
-        </NavItem>
-        <NavItem>
-          <Link color={theme.colors.light} icon={faMap} text={'Planning'} />
+          <Link
+            color={theme.colors.light}
+            color_hover={theme.colors.primary}
+            icon={faHome}
+            text={'Home'}
+          />
         </NavItem>
         <NavItem>
           <Link
             color={theme.colors.light}
+            color_hover={theme.colors.primary}
+            icon={faMap}
+            text={'Planning'}
+          />
+        </NavItem>
+        <NavItem>
+          <Link
+            color={theme.colors.light}
+            color_hover={theme.colors.primary}
             icon={faMapMarkerAlt}
             text={'Saved Places'}
           />
@@ -60,6 +71,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
+            color_hover={theme.colors.primary}
             icon={faPassport}
             text={'Past Trips'}
           />
@@ -67,6 +79,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
+            color_hover={theme.colors.primary}
             icon={faUserFriends}
             text={'About us'}
           />
