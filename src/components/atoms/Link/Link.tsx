@@ -6,7 +6,7 @@ export interface ILink {
   text: string;
   icon?: IconDefinition;
   color: string;
-  color_hover: string;
+  onHoverColor: string;
 }
 
 const StyledLink = styled.button<ILink>`
@@ -21,7 +21,7 @@ const StyledLink = styled.button<ILink>`
   padding: 1rem;
   :hover {
     transition: all 0.3s ease;
-    color: ${(props) => props.color_hover};
+    color: ${(props) => props.onHoverColor};
     transform: translateX(10px);
   }
 `;

@@ -47,7 +47,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
-            color_hover={theme.colors.primary}
+            onHoverColor={theme.colors.primary}
             icon={faHome}
             text={'Home'}
           />
@@ -55,7 +55,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
-            color_hover={theme.colors.primary}
+            onHoverColor={theme.colors.primary}
             icon={faMap}
             text={'Planning'}
           />
@@ -63,7 +63,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
-            color_hover={theme.colors.primary}
+            onHoverColor={theme.colors.primary}
             icon={faMapMarkerAlt}
             text={'Saved Places'}
           />
@@ -71,7 +71,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
-            color_hover={theme.colors.primary}
+            onHoverColor={theme.colors.primary}
             icon={faPassport}
             text={'Past Trips'}
           />
@@ -79,7 +79,7 @@ const Sidebar = () => {
         <NavItem>
           <Link
             color={theme.colors.light}
-            color_hover={theme.colors.primary}
+            onHoverColor={theme.colors.primary}
             icon={faUserFriends}
             text={'About us'}
           />

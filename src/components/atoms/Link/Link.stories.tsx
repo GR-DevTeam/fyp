@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Link from '../Link/Link';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import theme from '../../../theme/theme';
 
 export default {
   title: 'Components/Atoms/Link',
@@ -12,7 +13,7 @@ export default {
         type: 'color',
       },
     },
-    color_hover: {
+    onHoverColor: {
       control: {
         type: 'color',
       },
@@ -25,7 +26,7 @@ const Template: ComponentStory<typeof Link> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   icon: faSearch,
-  text: 'default',
-  color: '#000',
-  color_hover: '#FE8F29',
+  text: 'Default',
+  color: theme.colors.dark,
+  onHoverColor: theme.colors.primary,
 };
