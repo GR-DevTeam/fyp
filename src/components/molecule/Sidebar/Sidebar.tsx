@@ -41,7 +41,12 @@ const Sidebar: React.FC<ILinkContainer> = (props) => {
       <Navigation>
         {props.data.map((item) => (
           <NavItem>
-            <Link icon={item.icon} text={item.text} color={item.color} />
+            <Link
+              icon={item.icon}
+              text={item.text}
+              color={item.color}
+              onHoverColor={item.onHoverColor}
+            />
           </NavItem>
         ))}
       </Navigation>

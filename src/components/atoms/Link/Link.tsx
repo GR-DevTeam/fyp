@@ -6,6 +6,7 @@ export interface ILink {
   text: string;
   icon?: IconDefinition;
   color: string;
+  onHoverColor: string;
 }
 
 const StyledLink = styled.button<ILink>`
@@ -20,7 +21,7 @@ const StyledLink = styled.button<ILink>`
   padding: 1rem;
   :hover {
     transition: all 0.3s ease;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.onHoverColor};
     transform: translateX(10px);
   }
 `;
@@ -28,7 +29,7 @@ const Text = styled.div`
   padding-left: 0.4rem;
 `;
 
-const SidebarButton: React.FC<ILink> = (props) => {
+const Link: React.FC<ILink> = (props) => {
   return (
     <StyledLink {...props}>
       <FontAwesomeIcon icon={props.icon as IconDefinition} />
@@ -37,4 +38,4 @@ const SidebarButton: React.FC<ILink> = (props) => {
   );
 };
 
-export default SidebarButton;
+export default Link;

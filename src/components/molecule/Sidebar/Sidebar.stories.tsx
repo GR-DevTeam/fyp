@@ -17,7 +17,8 @@ Default.args = {
     {
       icon: faUserFriends,
       text: 'example',
-      color: '#FFFFFF',
+      color: '#F8F7F9',
+      onHoverColor: '#FE8F29',
     },
   ],
 };
