@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof Sidebar> = (args) => (
 );
 export const Default = Template.bind({});
 Default.args = {
-  data: [
+  items: [
     {
       icon: faUserFriends,
       text: 'example',
