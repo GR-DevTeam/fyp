@@ -1,20 +1,18 @@
 import React from 'react';
-import styled, { useTheme } from 'styled-components';
-import {
-  faHome,
-  faMap,
-  faMapMarkerAlt,
-  faPassport,
-  faUserFriends,
-} from '@fortawesome/free-solid-svg-icons';
-import Link from '../../atoms/Link/Link';
+import styled from 'styled-components';
+import Link, { ILink } from '../../atoms/Link/Link';
+
+export interface ILinkContainer {
+  data: Array<ILink>;
+}
 
 const Wrapper = styled.div`
-  height: 90%;
-  width: 12.5%;
+  height: 100%;
+  width: 100%;
   background-color: ${(props) => props.theme.colors.dark};
   display: grid;
-  align-items: center;
+  place-items: center;
+  grid-area: sidebar;
 `;
 
 const Navigation = styled.ul`
@@ -37,40 +35,15 @@ const NavItem = styled.li`
   align-items: center;
 `;
 
-const Sidebar = () => {
-  // Temporal solution for the coloring of the link
-  const theme = useTheme();
-
+const Sidebar: React.FC<ILinkContainer> = (props) => {
   return (
     <Wrapper>
       <Navigation>
-        <NavItem>
-          <Link color={theme.colors.light} icon={faHome} text={'Home'} />
-        </NavItem>
-        <NavItem>
-          <Link color={theme.colors.light} icon={faMap} text={'Planning'} />
-        </NavItem>
-        <NavItem>
-          <Link
-            color={theme.colors.light}
-            icon={faMapMarkerAlt}
-            text={'Saved Places'}
-          />
-        </NavItem>
-        <NavItem>
-          <Link
-            color={theme.colors.light}
-            icon={faPassport}
-            text={'Past Trips'}
-          />
-        </NavItem>
-        <NavItem>
-          <Link
-            color={theme.colors.light}
-            icon={faUserFriends}
-            text={'About us'}
-          />
-        </NavItem>
+        {props.data.map((item) => (
+          <NavItem>
+            <Link icon={item.icon} text={item.text} color={item.color} />
+          </NavItem>
+        ))}
       </Navigation>
     </Wrapper>
   );

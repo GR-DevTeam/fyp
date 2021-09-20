@@ -1,12 +1,23 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Sidebar from './Sidebar';
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   title: 'Components/Molecules/Sidebar',
   component: Sidebar,
-  argTypes: {},
 } as ComponentMeta<typeof Sidebar>;
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar />;
+
+const Template: ComponentStory<typeof Sidebar> = (args) => (
+  <Sidebar {...args} />
+);
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  data: [
+    {
+      icon: faUserFriends,
+      text: 'example',
+      color: '#FFFFFF',
+    },
+  ],
+};
