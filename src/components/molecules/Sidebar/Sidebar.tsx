@@ -7,10 +7,10 @@ export interface ILinkContainer {
 }
 
 const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  background-color: ${(props) => props.theme.colors.dark};
   grid-area: sidebar;
+  height: 100%;
+  width: auto;
+  background-color: ${(props) => props.theme.colors.dark};
   display: flex;
   flex-direction: column;
   justify-items: space-around;
