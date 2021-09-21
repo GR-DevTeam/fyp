@@ -7,7 +7,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div className='App'>
+      <div className="App">
         {/* Aca van para testear los componentes hasta que Dani termine el #9 */}
       </div>
     </ThemeProvider>
