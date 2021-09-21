@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Sidebar from './Sidebar';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import theme from '../../../theme/theme';
 
 export default {
   title: 'Components/Molecules/Sidebar',
@@ -17,8 +18,8 @@ Default.args = {
     {
       icon: faUserFriends,
       text: 'example',
-      color: '#F8F7F9',
-      onHoverColor: '#FE8F29',
+      color: theme.colors.light,
+      onHoverColor: theme.colors.primary,
     },
   ],
 };
