@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 
 
 export default {
-    title: 'Components/Molecule/Navbar/Navbar',
+    title: 'Components/Molecules/Navbar',
     component: Navbar,
   } as ComponentMeta<typeof Navbar>;
 
