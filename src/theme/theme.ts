@@ -11,6 +11,8 @@ const theme: DefaultTheme = {
     'grey-300': '#828181',
     'grey-400': '#A9A8A9',
     'grey-500': '#D1D0D1',
+    'grey-600': '#ebebeb',
+    'grey-700': '#f5f5f5',
   },
   spacing: {
     xxs: '1rem',
@@ -29,6 +31,23 @@ const theme: DefaultTheme = {
     l: '3rem',
     xl: '6rem',
     xxl: '8rem',
+  },
+  fontSizes: {
+    xxs: '0.25rem',
+    xs: '0.5rem',
+    s: '0.75rem',
+    m: '1rem',
+    l: '1.5rem',
+    xl: '2rem',
+    xxl: '3rem',
+  },
+  radius: {
+    rounded: '20px',
+    squared: '0',
+  },
+  shadows: {
+    withShadow: '0.5rem 0.25rem 0.5rem #0002;',
+    withoutShadow: 'none',
   },
 };
 

@@ -10,13 +10,26 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>Button</Button>;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  onClick: (ev) => alert('clickEvent'),
+};
 
 export const Primary = Template.bind({});
-Default.args = {
-  isPrimary: true,
+Primary.args = {
+  variant: 'primary',
+  isInverted: false,
+  onClick: (ev) => alert('clickEvent'),
 };
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: 'secondary',
+  isInverted: false,
+  onClick: (ev) => alert('clickEvent'),
+};
+
 export const Inverted = Template.bind({});
-Default.args = {
+Inverted.args = {
   isInverted: true,
+  onClick: (ev) => alert('clickEvent'),
 };
