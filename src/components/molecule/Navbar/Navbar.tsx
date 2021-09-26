@@ -2,17 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import InputText from '../../atoms/InputText/InputText';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import 'styled-components';
+
+
+
 
 
 const StyledNavbar = styled.nav`
-    width: 97vw;
-    height: 1.5rem;
-    background: #0E0D0B;
-    color: white;
+    width: 100vw;
+    height: ${props => props.theme.spacing.s};
+    background: ${props => props.theme.colors.dark};
+    color: ${props => props.theme.colors.light};
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+    padding: ${props => props.theme.spacing.xs};
 `;
 
 
@@ -20,7 +23,7 @@ const StyledNavbar = styled.nav`
 const Navbar: React.FC = () => {
     return (
         <StyledNavbar>
-            <React.Fragment>LOGO</React.Fragment>
+            <div>LOGO</div>
             <InputText icon={faSearch}/>
         </StyledNavbar>
     )

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Navbar from './Navbar';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 export default {
