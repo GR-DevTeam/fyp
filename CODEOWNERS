@@ -1,1 +1,4 @@
-maxhmoyano@gmail.com
+#Code owners for src directory
+
+src/ @MaxHMoyano
+.storybook/ @MaxHMoyano
