@@ -1,83 +1,39 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React, { MouseEvent } from 'react';
+import styled from 'styled-components';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { getButtonVariants } from '../../../theme/util/colorVariants';
 
 export interface IButton {
   icon?: IconDefinition | null;
-  isPrimary: boolean;
-  isInverted: boolean;
+  variant?: 'primary' | 'secondary';
+  isInverted?: boolean;
+  isRounded?: boolean;
+  onClick?: (ev: MouseEvent<HTMLButtonElement>) => any;
 }
 
-let primaryAndInverted = (props: any) => css`
-  border: 2px solid ${props.theme.colors.primary};
-  background-color: ${props.theme.colors.light};
-  color: ${props.theme.colors.primary};
-`;
-let primaryAndNotInverted = (props: any) => css`
-  border: 1px solid #0001;
-  background-color: ${props.theme.colors.primary};
-  color: ${props.theme.colors.light};
-`;
-let notPrimaryAndInverted = (props: any) => css`
-  border: 1px solid ${props.theme.colors.light};
-  background-color: ${props.theme.colors['grey-200']};
-  color: ${props.theme.colors.light};
-`;
-let notPrimaryAndNotInverted = (props: any) => css`
-  border: 1px solid #0002;
-  background-color: ${props.theme.colors.light};
-  color: ${props.theme.colors.dark};
-`;
-
-// TODO: Make an util for properties when different styles on same component
 const StyledButton = styled.button<IButton>`
-  padding: 1rem 3.5rem;
-  font-size: 1rem;
-  box-shadow: 0.5rem 0.25rem 0.5rem #0002;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: all ease 0.2s;
-  ${(props) =>
-    props.isPrimary
-      ? props.isInverted
-        ? primaryAndInverted(props)
-        : primaryAndNotInverted(props)
-      : props.isInverted
-      ? notPrimaryAndInverted(props)
-      : notPrimaryAndNotInverted(props)}
+  padding: ${(props) => props.theme.spacing.xxs} ${(props) => props.theme.spacing.xl};
+  font-size: ${(props) => props.theme.fontSizes.m};
+  border-radius: ${(props) =>
+    props.isRounded ? props.theme.radius.rounded : props.theme.radius.squared};
+  transition: all ease 0.3s;
+  cursor: pointer;
+  ${(props) => getButtonVariants(props.variant, props.isInverted)};
   &:hover {
-    cursor: pointer;
-    transform: translateY(0.05rem);
-    background-color: ${(props) =>
-      props.isPrimary
-        ? props.isInverted
-          ? props.theme.colors.primary
-          : '#cd6c13'
-        : props.isInverted
-        ? props.theme.colors['grey-100']
-        : props.theme.colors['grey-300']};
-    color: ${(props) =>
-      props.isPrimary
-        ? props.isInverted
-          ? props.theme.colors.light
-          : props.theme.colors.light
-        : props.isInverted
-        ? props.theme.colors.light
-        : props.theme.colors.light};
+    box-shadow: ${(props) => props.theme.shadows.withShadow};
   }
 `;
 
-const Button: React.FC<IButton> = ({ isPrimary, isInverted, children }) => {
+const Button: React.FC<IButton> = (props) => {
   return (
-    <StyledButton isPrimary={isPrimary} isInverted={isInverted}>
-      {children}
+    <StyledButton {...props} onClick={props.onClick}>
+      {props.children}
     </StyledButton>
   );
 };
 
 Button.defaultProps = {
   icon: null,
-  isPrimary: false,
   isInverted: false,
 };
 
