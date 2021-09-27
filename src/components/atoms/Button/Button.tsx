@@ -7,19 +7,20 @@ export interface IButton {
   icon?: IconDefinition | null;
   variant?: 'primary' | 'secondary';
   isInverted?: boolean;
+  isRounded?: boolean;
   onClick?: (ev: MouseEvent<HTMLButtonElement>) => any;
 }
 
 const StyledButton = styled.button<IButton>`
   padding: ${(props) => props.theme.spacing.xxs} ${(props) => props.theme.spacing.xl};
   font-size: ${(props) => props.theme.fontSizes.m};
-  border-radius: ${(props) => props.theme.radius.rounded};
+  border-radius: ${(props) =>
+    props.isRounded ? props.theme.radius.rounded : props.theme.radius.squared};
   transition: all ease 0.3s;
   cursor: pointer;
-  box-shadow: ${(props) => props.theme.shadows.withShadow};
-  outline: none;
-  ${(props) => getButtonVariants(props.variant, props.isInverted)}
+  ${(props) => getButtonVariants(props.variant, props.isInverted)};
   &:hover {
+    box-shadow: ${(props) => props.theme.shadows.withShadow};
   }
 `;
 

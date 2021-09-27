@@ -6,6 +6,8 @@ const theme: DefaultTheme = {
     secondary: '#0C89DA',
     light: '#F8F7F9',
     dark: '#0B0B09',
+    white: '#fff',
+    black: '#000',
     'grey-100': '#333231',
     'grey-200': '#5A5A59',
     'grey-300': '#828181',
@@ -42,7 +44,7 @@ const theme: DefaultTheme = {
     xxl: '3rem',
   },
   radius: {
-    rounded: '20px',
+    rounded: '30px',
     squared: '0',
   },
   shadows: {

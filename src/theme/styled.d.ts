@@ -46,6 +46,8 @@ interface Colors {
   secondary: string;
   light: string;
   dark: string;
+  white: string;
+  black: string;
   'grey-100': string;
   'grey-200': string;
   'grey-300': string;
