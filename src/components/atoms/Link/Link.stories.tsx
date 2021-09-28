@@ -20,13 +20,11 @@ export default {
     },
   },
 } as ComponentMeta<typeof Link>;
-const Template: ComponentStory<typeof Link> = (args) => (
-  <Link {...args}>Link</Link>
-);
+const Template: ComponentStory<typeof Link> = (args) => <Link {...args}>Link</Link>;
 export const Default = Template.bind({});
 Default.args = {
   icon: faSearch,
   text: 'Default',
   color: theme.colors.dark,
-  onHoverColor: theme.colors.primary,
+  hoverColor: theme.colors.primary,
 };
