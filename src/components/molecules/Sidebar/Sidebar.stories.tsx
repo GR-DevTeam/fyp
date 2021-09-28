@@ -9,9 +9,7 @@ export default {
   component: Sidebar,
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => (
-  <Sidebar {...args} />
-);
+const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   items: [
@@ -37,7 +35,7 @@ Default.args = {
       icon: faUserFriends,
       text: 'example 4',
       color: theme.colors.light,
-      onHoverColor: theme.colors.primary,
+      hoverColor: theme.colors.primary,
     },
   ],
 };

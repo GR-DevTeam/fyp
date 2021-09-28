@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link, { ILink } from '../../atoms/Link/Link';
 
 export interface ILinkContainer {
-  items: Array<ILink>;
+  items: ILink[];
 }
 
 const Wrapper = styled.div`
@@ -21,12 +21,7 @@ const Sidebar: React.FC<ILinkContainer> = (props) => {
   return (
     <Wrapper>
       {props.items.map((item) => (
-        <Link
-          icon={item.icon}
-          text={item.text}
-          color={item.color}
-          onHoverColor={item.onHoverColor}
-        />
+        <Link {...item} />
       ))}
     </Wrapper>
   );
