@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputText from '../../atoms/InputText/InputText';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import 'styled-components';
+import Input from '../../atoms/Input/Input';
 
 
 
 
-
-const StyledNavbar = styled.nav`
+const StyledNavbar = styled.div`
     width: 100vw;
-    height: ${props => props.theme.spacing.s};
+    height: ${props => props.theme.measures.l};
+    grid-area: navbar;
     background: ${props => props.theme.colors.dark};
     color: ${props => props.theme.colors.light};
     display: flex;
@@ -18,13 +16,17 @@ const StyledNavbar = styled.nav`
     padding: ${props => props.theme.spacing.xs};
 `;
 
+const StyledLogo = styled.div`
+    width: ${props => props.theme.measures.s};
+    padding: ${props => props.theme.spacing.xxs};
+`;
 
 
 const Navbar: React.FC = () => {
     return (
         <StyledNavbar>
-            <div>LOGO</div>
-            <InputText icon={faSearch}/>
+            <StyledLogo>LOGO</StyledLogo>
+            <Input />
         </StyledNavbar>
     )
 }

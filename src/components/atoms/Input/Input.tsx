@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export interface IInputText {
   placeholder?: string;
-  icon: IconDefinition;
+  icon?: IconDefinition;
 }
 
 const Icon = styled(FontAwesomeIcon)`
@@ -13,7 +13,6 @@ const Icon = styled(FontAwesomeIcon)`
   background: ${(props) => props.theme.colors.light};
   flex: 0 0;
   padding: 1rem;
-  border-radius: 0 5px 5px 0;
 `;
 
 const StyledInput = styled.input`
@@ -23,7 +22,6 @@ const StyledInput = styled.input`
   outline: none;
   border: none;
   padding: 0 1rem;
-  font-weight: bold;
   &::-webkit-input-placeholder {
     opacity: 1;
   }
@@ -32,18 +30,20 @@ const StyledInput = styled.input`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  background: transparent;
+  background: ${(props) => props.theme.colors.white};
   width: fit-content;
-  box-shadow: 0.5rem 0.25rem 0.5rem #0002;
-  border-radius: 5px;
   border: 1px solid #0001;
+  transition: all ease 0.3s;
+  &:hover {
+    box-shadow: 0.5rem 0.25rem 0.5rem #0002;
+  }
 `;
 
 const InputText: React.FC<IInputText> = (props) => {
   return (
     <Wrapper>
       <StyledInput placeholder={props.placeholder} />
-      <Icon icon={props.icon} />
+      <Icon icon={props.icon as IconDefinition} />
     </Wrapper>
   );
 };

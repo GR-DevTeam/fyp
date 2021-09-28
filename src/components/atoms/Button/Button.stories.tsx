@@ -13,10 +13,23 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const Primary = Template.bind({});
-Default.args = {
-  isPrimary: true,
+Primary.args = {
+  variant: 'primary',
+  isInverted: false,
 };
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: 'secondary',
+  isInverted: false,
+};
+
 export const Inverted = Template.bind({});
-Default.args = {
+Inverted.args = {
   isInverted: true,
+};
+
+export const Rounded = Template.bind({});
+Rounded.args = {
+  isRounded: true,
 };
