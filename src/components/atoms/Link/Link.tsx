@@ -9,7 +9,7 @@ export interface ILink {
   hoverColor: string;
 }
 
-const StyledLink = styled.button<ILink>`
+const StyledLink = styled.a<ILink>`
   color: ${(props) => props.color};
   background: none;
   cursor: pointer;

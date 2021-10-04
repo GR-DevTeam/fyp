@@ -13,17 +13,28 @@ export default {
         type: 'color',
       },
     },
-    onHoverColor: {
+    hoverColor: {
       control: {
         type: 'color',
       },
     },
   },
 } as ComponentMeta<typeof Link>;
-const Template: ComponentStory<typeof Link> = (args) => <Link {...args}>Link</Link>;
+const Template: ComponentStory<typeof Link> = (args) => (
+  <div style={{ backgroundColor: '#ccc' }}>
+    <Link {...args}>Link</Link>
+  </div>
+);
 export const Default = Template.bind({});
 Default.args = {
   icon: faSearch,
+  text: 'Default',
+  color: theme.colors.dark,
+  hoverColor: theme.colors.primary,
+};
+
+export const NoIcon = Template.bind({});
+NoIcon.args = {
   text: 'Default',
   color: theme.colors.dark,
   hoverColor: theme.colors.primary,
