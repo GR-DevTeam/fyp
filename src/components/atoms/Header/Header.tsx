@@ -5,7 +5,7 @@ export interface IHeader {
   isLight?: boolean;
 }
 
-const StyledHeader = styled.header<IHeader>`
+const StyledHeader = styled.h2<IHeader>`
   font-size: ${(props) =>
     props.size === 's'
       ? props.theme.fontSizes.m
