@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-export interface IHeader {
+export interface IHeading {
   size: 's' | 'm' | 'l';
   isLight?: boolean;
 }
 
-const StyledHeader = styled.h2<IHeader>`
+const StyledHeading = styled.h2<IHeading>`
   font-size: ${(props) =>
     props.size === 's'
       ? props.theme.fontSizes.m
@@ -15,8 +15,8 @@ const StyledHeader = styled.h2<IHeader>`
   color: ${(props) =>
     props.isLight ? props.theme.colors.light : props.theme.colors.dark};
 `;
-const Header: React.FC<IHeader> = (props) => {
-  return <StyledHeader {...props}>{props.children}</StyledHeader>;
+const Heading: React.FC<IHeading> = (props) => {
+  return <StyledHeading {...props}>{props.children}</StyledHeading>;
 };
 
-export default Header;
+export default Heading;
