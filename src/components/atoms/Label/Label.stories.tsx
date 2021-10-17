@@ -1,17 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Label from './Label';
+import { faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default {
   title: 'Components/Atoms/Label',
   component: Label,
-  args: {
-    children:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum volutpat arcu eu dapibus. Donec cursus porttitor cursus. In tincidunt.',
-  },
-  argTypes: {
-    children: { control: 'Label' },
-  },
+  args: {},
 } as ComponentMeta<typeof Label>;
 
 const Template: ComponentStory<typeof Label> = (args) => (
@@ -19,4 +15,7 @@ const Template: ComponentStory<typeof Label> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  text: 'Label',
+  icon: faSearch,
+};
