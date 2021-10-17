@@ -11,14 +11,24 @@ export interface ILabel {
 }
 
 const StyledLabel = styled.div<ILabel>`
+  display: flex;
   border-radius: 15px;
+  margin: 3rem;
+  background-color: ${(props) =>
+    props.variant === 'danger'
+      ? '#FF0000'
+      : props.variant === 'success'
+      ? '#00FF00'
+      : props.variant === 'warning'
+      ? '#FFFF00'
+      : props.theme.colors.primary};
 `;
 
 const Label: React.FC<ILabel> = (props) => {
   return (
     <div>
       <FontAwesomeIcon icon={props.icon as IconDefinition} />
-      <Text>{props.text} </Text>
+      <Text size="l" />
     </div>
   );
 };
