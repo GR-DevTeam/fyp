@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import Text from '../Text/Text';
 export interface ILabel {
   text: string;
@@ -10,10 +10,13 @@ export interface ILabel {
   icon?: IconDefinition;
 }
 
-const StyledLabel = styled.div<ILabel>`
+const Container = styled.div<ILabel>`
   display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 15px;
   margin: 3rem;
+  width: 100px;
   background-color: ${(props) =>
     props.variant === 'danger'
       ? '#FF0000'
@@ -26,10 +29,11 @@ const StyledLabel = styled.div<ILabel>`
 
 const Label: React.FC<ILabel> = (props) => {
   return (
-    <div>
+    <Container {...props}>
       <FontAwesomeIcon icon={props.icon as IconDefinition} />
-      <Text size="l" />
-    </div>
+      <Text size='s'>{props.text}</Text>
+      <FontAwesomeIcon onClick={(ev) => alert('clickeo el cerrar')} icon={faTimes} />
+    </Container>
   );
 };
 
