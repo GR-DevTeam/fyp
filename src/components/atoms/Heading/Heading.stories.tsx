@@ -10,7 +10,7 @@ export default {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum volutpat arcu eu dapibus. Donec cursus porttitor cursus. In tincidunt.',
   },
   argTypes: {
-    children: { control: 'Heading' },
+    children: { control: 'text' },
   },
 } as ComponentMeta<typeof Heading>;
 
