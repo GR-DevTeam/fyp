@@ -4,11 +4,12 @@ import Hero from './Hero';
 
 
 export default {
-    title: 'Components/Molecules/Hero',
-    component: Hero,
+  title: 'Components/Molecules/Hero',
+  component: Hero,
   } as ComponentMeta<typeof Hero>;
 
   const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />;
 
 
-  export const Default = Template.bind({});
+export const Default = Template.bind({});
+Default.args = {};

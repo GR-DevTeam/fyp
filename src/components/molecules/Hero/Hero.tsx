@@ -1,32 +1,31 @@
 import React from 'react'
 import styled from 'styled-components';
 import Text from '../../atoms/Text/Text';
+import Button from '../../atoms/Button/Button';
+
+export interface IHero {
+    Text: string;
+}
+
+
 
 const Wrapper = styled.div`
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-row: 2;
-    align-items: center;
-`;
-
-const Loquereciba = styled.div`
     background: ${props => props.theme.colors.primary};
     color: ${props => props.theme.colors.light};
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-row: 2;
     justify-content: center;
     align-items: center;
 `;
 
-const Hero: React.FC = () => {
+const Hero: React.FC<IHero> = (props) => {
     return (
-            <Loquereciba>
-                <Text size={'l'}> hola juancarlo</Text>
-                ola
-            </Loquereciba>
+            <Wrapper>
+                <Text size={'l'}>Descripcion</Text>
+                <Button />
+            </Wrapper>
     )
 }
 
