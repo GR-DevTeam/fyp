@@ -41,7 +41,7 @@ interface Shadows {
   withoutShadow: string;
 }
 
-interface Colors {
+export interface Colors {
   primary: string;
   secondary: string;
   light: string;
