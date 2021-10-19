@@ -2,13 +2,13 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme/theme';
 import GlobalStyle from './theme/GlobalStyle';
-
+import Sidebar from './components/molecules/Sidebar/Sidebar';
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div className="App">
-        {/* Aca van para testear los componentes hasta que Dani termine el #9 */}
+      <div className='App'>
+        <Sidebar />
       </div>
     </ThemeProvider>
   );

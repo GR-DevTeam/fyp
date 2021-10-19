@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link, { ILink } from '../../atoms/Link/Link';
-
-export interface ILinkContainer {
-  items: Array<ILink>;
-}
+import { useAppSelector } from '../../../app/hooks';
+import { selectMenu } from '../../../features/menu/menuSlice';
+import Link from '../../atoms/Link/Link';
 
 const Wrapper = styled.div`
   grid-area: sidebar;
@@ -17,16 +15,12 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Sidebar: React.FC<ILinkContainer> = (props) => {
+const Sidebar: React.FC = () => {
+  const items = useAppSelector(selectMenu);
   return (
     <Wrapper>
-      {props.items.map((item) => (
-        <Link
-          icon={item.icon}
-          text={item.text}
-          color={item.color}
-          onHoverColor={item.onHoverColor}
-        />
+      {items.map((item) => (
+        <Link {...item} />
       ))}
     </Wrapper>
   );
