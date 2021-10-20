@@ -17,9 +17,27 @@ Default.args = {
   items: [
     {
       icon: faUserFriends,
-      text: 'example',
+      text: 'example 1',
       color: theme.colors.light,
-      onHoverColor: theme.colors.primary,
+      hoverColor: theme.colors.primary,
+    },
+    {
+      icon: faUserFriends,
+      text: 'example 2',
+      color: theme.colors.light,
+      hoverColor: theme.colors.primary,
+    },
+    {
+      icon: faUserFriends,
+      text: 'example 3',
+      color: theme.colors.light,
+      hoverColor: theme.colors.primary,
+    },
+    {
+      icon: faUserFriends,
+      text: 'example 4',
+      color: theme.colors.light,
+      hoverColor: theme.colors.primary,
     },
   ],
 };
