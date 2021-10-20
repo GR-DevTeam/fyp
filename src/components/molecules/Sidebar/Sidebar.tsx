@@ -1,16 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
-import Link, { ILink } from '../../atoms/Link/Link';
-
-export interface ILinkContainer {
-  items: ILink[];
-}
-=======
 import { useAppSelector } from '../../../app/hooks';
 import { selectMenu } from '../../../features/menu/menuSlice';
 import Link from '../../atoms/Link/Link';
->>>>>>> origin/master
 
 const Wrapper = styled.div`
   grid-area: sidebar;
