@@ -15,12 +15,7 @@ export default {
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text> = (args) => (
-  <div
-    style={{
-      backgroundColor: args.isLight ? '#333' : 'transparent',
-      padding: '2rem',
-    }}
-  >
+  <div style={{ backgroundColor: args.isLight ? '#333' : 'transparent', padding: '2rem' }}>
     <Text {...args}>{args.children}</Text>
   </div>
 );
