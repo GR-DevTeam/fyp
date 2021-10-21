@@ -4,7 +4,9 @@ import Text from '../../atoms/Text/Text';
 import Button from '../../atoms/Button/Button';
 
 export interface IHero {
-    Text: string;
+    Tittle: string;
+    Description: string;
+    Button: string;
 }
 
 
@@ -15,16 +17,19 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
-    grid-row: 2;
+    grid-row: 4;
     justify-content: center;
     align-items: center;
+    justify-items: center;
 `;
 
 const Hero: React.FC<IHero> = (props) => {
     return (
-            <Wrapper>
-                <Text size={'l'}>Descripcion</Text>
-                <Button />
+            <Wrapper  >
+            <Text size={'l'}>{props.Tittle}</Text>
+            <Text size={'m'}>{props.Description}</Text>
+            <Button>{props.Button}</Button>
+            <Text size={'s'}>Terms of service</Text>
             </Wrapper>
     )
 }
