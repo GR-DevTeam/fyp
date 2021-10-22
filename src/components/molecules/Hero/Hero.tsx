@@ -2,11 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 import Text from '../../atoms/Text/Text';
 import Button from '../../atoms/Button/Button';
+import Heading from '../../atoms/Heading/Heading';
 
 export interface IHero {
     Tittle: string;
     Description: string;
     Button: string;
+    Terms: string;
 }
 
 
@@ -26,10 +28,10 @@ const Wrapper = styled.div`
 const Hero: React.FC<IHero> = (props) => {
     return (
             <Wrapper  >
-            <Text size={'l'}>{props.Tittle}</Text>
-            <Text size={'m'}>{props.Description}</Text>
-            <Button>{props.Button}</Button>
-            <Text size={'s'}>Terms of service</Text>
+            <Heading size={'l'}>{props.Tittle}</Heading>
+            <Text size={'l'}>{props.Description}</Text>
+            <Button isRounded variant={'secondary'}>{props.Button}</Button>
+            <Text size={'s'}>{props.Terms}</Text>
             </Wrapper>
     )
 }
