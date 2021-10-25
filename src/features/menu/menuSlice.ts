@@ -1,9 +1,7 @@
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
 import { ILink } from '../../components/atoms/Link/Link';
-import { Colors } from '../../theme/styled';
 import theme from '../../theme/theme';
 
 // un estado es inmutable
@@ -39,6 +37,7 @@ const initialState: ILink[] = [
     hoverColor: theme.colors.primary,
   },
 ];
+
 export const menuSlice = createSlice({
   name: 'menu',
   initialState,
