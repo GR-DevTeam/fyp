@@ -1,39 +1,42 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import Text from '../../atoms/Text/Text';
 import Button from '../../atoms/Button/Button';
 import Heading from '../../atoms/Heading/Heading';
 
 export interface IHero {
-    Tittle: string;
-    Description: string;
-    Button: string;
-    Terms: string;
+  // TODO: Add backgroundColor & optional button rendering
+  // Conditional rendering info: https://reactjs.org/docs/conditional-rendering.html
+  title: string;
+  description: string;
+  button: string;
+  terms: string;
+  onButtonClick: (ev: any) => any;
 }
 
-
-
 const Wrapper = styled.div`
-    background: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.light};
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-row: 4;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.light};
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-row: 4;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 `;
 
 const Hero: React.FC<IHero> = (props) => {
-    return (
-            <Wrapper  >
-            <Heading size={'l'}>{props.Tittle}</Heading>
-            <Text size={'l'}>{props.Description}</Text>
-            <Button isRounded variant={'secondary'}>{props.Button}</Button>
-            <Text size={'s'}>{props.Terms}</Text>
-            </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <Heading size={'l'}>{props.title}</Heading>
+      <Text size={'m'}>{props.description}</Text>
+      <Button onClick={props.onButtonClick} isInverted>
+        {props.button}
+      </Button>
+      <Text size={'s'}>{props.terms}</Text>
+    </Wrapper>
+  );
+};
 
-export default Hero
+export default Hero;

@@ -11,9 +11,8 @@ const StyledHeading = styled.h2<IHeading>`
       ? props.theme.fontSizes.m
       : props.size === 'm'
       ? props.theme.fontSizes.l
-      : props.theme.fontSizes.xl};
-  color: ${(props) =>
-    props.isLight ? props.theme.colors.light : props.theme.colors.dark};
+      : props.theme.fontSizes.xxl};
+  color: ${(props) => (props.isLight ? props.theme.colors.light : props.theme.colors.dark)};
 `;
 const Heading: React.FC<IHeading> = (props) => {
   return <StyledHeading {...props}>{props.children}</StyledHeading>;
