@@ -25,6 +25,7 @@ const Wrapper = styled.div<IHero>`
     align-items: center;
     justify-items: center;
     grid-template-columns: 1fr 4fr;
+    padding: ${(props) => props.theme.measures.l};
 `;
 
 const Hero: React.FC<IHero> = (props) => {
