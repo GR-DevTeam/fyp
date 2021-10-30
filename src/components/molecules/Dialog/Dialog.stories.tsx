@@ -7,7 +7,13 @@ export default {
   component: Dialog
 } as ComponentMeta<typeof Dialog>;
 
-const Template: ComponentStory<typeof Dialog> = (args) => <Dialog/>;
+const Template: ComponentStory<typeof Dialog> = (args) => <Dialog {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {}
+Default.args = {
+  title:' This is a dialog',
+  content: 'This is the dialog content',
+  show: true,
+  onCancel: () => alert( 'Action cancelled' ),
+  onConfirm: () => alert( 'Action confirmed' )
+}

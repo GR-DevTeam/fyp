@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { rgba } from 'polished';
 import styled from 'styled-components';
 import Button from '../../atoms/Button/Button';
 import Text from '../../atoms/Text/Text'
+import Heading from '../../atoms/Heading/Heading';
 
 export interface IDialog {
-  // onConfirm: Function;
-  // onCancel: Function;
-  // title: string;
-  // content: string;
+  onConfirm: (ev: React.MouseEvent<HTMLButtonElement>) => any;
+  onCancel: (ev: React.MouseEvent<HTMLButtonElement>) => any;
+  title: string;
+  content: string;
+  show: boolean;
 }
 
-const ModalContainer  = styled.div`
+const ModalContainer  = styled.div<Pick<IDialog, 'show'>>`
   height: 100%;
   width: 100%;
   display: flex;
@@ -22,6 +24,9 @@ const ModalContainer  = styled.div`
   z-index: 1;
   top: 0;
   left: 0;
+  transition: all ease 0.1s;
+  opacity: ${ props => props.show ? 1 : 0 };
+  pointer-events: ${ props => props.show ? 'auto' : 'none' };
   `;
 
 const DialogWrapper = styled.div`
@@ -46,16 +51,15 @@ const ButtonContainer = styled.div`
 
 const Dialog: React.FC<IDialog> = (props) => {
 
-  const [toggle, setToggle] = useState(false)
 
   return (
-    <ModalContainer>
+    <ModalContainer show={props.show} >
       <DialogWrapper>
-        <Text size='l'>Titulo</Text>
-        <Text size= 'm'>Are you sure about that</Text>
+        <Heading size='m'>{props.title}</Heading>
+        <Text size= 'm'>{props.content}</Text>
         <ButtonContainer>
-          <Button>Cancel</Button>
-          <Button  variant={'primary'} >Confirm</Button>
+          <Button onClick={props.onCancel} >Cancel</Button>
+          <Button  variant={'primary'} onClick={ props.onConfirm } >Confirm</Button>
         </ButtonContainer>
       </DialogWrapper>
     </ModalContainer>
