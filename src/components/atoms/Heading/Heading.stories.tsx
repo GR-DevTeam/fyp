@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Text from './Text';
+import Heading from './Heading';
 
 export default {
-  title: 'Components/Atoms/Text',
-  component: Text,
+  title: 'Components/Atoms/Heading',
+  component: Heading,
   args: {
     children:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum volutpat arcu eu dapibus. Donec cursus porttitor cursus. In tincidunt.',
@@ -12,11 +12,16 @@ export default {
   argTypes: {
     children: { control: 'text' },
   },
-} as ComponentMeta<typeof Text>;
+} as ComponentMeta<typeof Heading>;
 
-const Template: ComponentStory<typeof Text> = (args) => (
-  <div style={{ backgroundColor: args.isLight ? '#333' : 'transparent', padding: '2rem' }}>
-    <Text {...args}>{args.children}</Text>
+const Template: ComponentStory<typeof Heading> = (args) => (
+  <div
+    style={{
+      backgroundColor: args.isLight ? '#333' : 'transparent',
+      padding: '2rem',
+    }}
+  >
+    <Heading {...args}>{args.children}</Heading>
   </div>
 );
 
