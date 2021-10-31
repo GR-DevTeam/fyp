@@ -13,7 +13,5 @@ export const Default = Template.bind({});
 Default.args = {
   title:' This is a dialog',
   content: 'This is the dialog content',
-  show: true,
-  onCancel: () => alert( 'Action cancelled' ),
   onConfirm: () => alert( 'Action confirmed' )
 }
