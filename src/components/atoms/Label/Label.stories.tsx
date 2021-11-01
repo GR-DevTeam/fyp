@@ -1,8 +1,6 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Label from './Label';
-import { faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   title: 'Components/Atoms/Label',
@@ -16,6 +14,12 @@ const Template: ComponentStory<typeof Label> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Label',
+  text: 'LABEL',
   icon: faSearch,
+};
+
+export const NoIcon = Template.bind({});
+NoIcon.args = {
+  text: 'LABEL',
+  onClose: () => console.log('hola'),
 };

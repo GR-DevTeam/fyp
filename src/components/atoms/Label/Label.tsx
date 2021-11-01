@@ -5,34 +5,46 @@ import { faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import Text from '../Text/Text';
 export interface ILabel {
   text: string;
-  variant?: 'danger' | 'success' | 'warning' | 'primary';
-  closeButton: boolean;
+  variant?: 'danger' | 'success' | 'warning' | 'info' | 'primary';
   icon?: IconDefinition;
+  onClose: (ev: any) => any;
 }
 
+const Icon = styled(FontAwesomeIcon)`
+  margin-right: 0.5rem;
+`;
+
 const Container = styled.div<ILabel>`
+  width: fit-content;
+  color: ${(props) => props.theme.colors.light};
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  margin: 3rem;
-  width: 100px;
+  justify-content: flex-start;
+  border-radius: ${(props) => props.theme.radius.rounded};
+  padding: 0 1rem;
   background-color: ${(props) =>
     props.variant === 'danger'
-      ? '#FF0000'
+      ? '#DC3545'
       : props.variant === 'success'
-      ? '#00FF00'
+      ? '#28A745'
       : props.variant === 'warning'
-      ? '#FFFF00'
+      ? '#FFC107'
+      : props.variant === 'info'
+      ? '#17A2B8'
       : props.theme.colors.primary};
 `;
 
 const Label: React.FC<ILabel> = (props) => {
+  console.log(props.onClose);
   return (
     <Container {...props}>
-      <FontAwesomeIcon icon={props.icon as IconDefinition} />
-      <Text size='s'>{props.text}</Text>
-      <FontAwesomeIcon onClick={(ev) => alert('clickeo el cerrar')} icon={faTimes} />
+      <Icon icon={props.icon as IconDefinition} />
+      <Text isLight={true} size="s">
+        {props.text}
+      </Text>
+      {typeof props.onClose == undefined && (
+        <FontAwesomeIcon onClick={props.onClose} icon={faTimes} />
+      )}
     </Container>
   );
 };
