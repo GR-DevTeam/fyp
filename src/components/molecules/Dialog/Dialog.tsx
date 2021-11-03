@@ -1,14 +1,16 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { rgba } from 'polished';
 import styled from 'styled-components';
 
 import Button from '../../atoms/Button/Button';
 import Text from '../../atoms/Text/Text'
 import Heading from '../../atoms/Heading/Heading';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { dialogToggle, toggle } from '../../../features/dialog/dialogSlice';
 
 export interface IDialog {
-  onConfirm: (ev: React.MouseEvent<HTMLButtonElement>) => any;
-  // onCancel: (ev: React.MouseEvent<HTMLButtonElement>) => any;
+  onConfirm: Function;
+  onCancel: Function;
   title: string;
   content: string;
 }
@@ -28,7 +30,7 @@ const ModalContainer  = styled.div<IDialogShow>`
   z-index: 1;
   top: 0;
   left: 0;
-  transition: all ease 0.1s;
+  transition: all ease 0.25s;
   opacity: ${ props => props.show ? 1 : 0 };
   pointer-events: ${ props => props.show ? 'all' : 'none' };
   `;
@@ -56,17 +58,27 @@ const ButtonContainer = styled.div`
 
 const Dialog: React.FC<IDialog> = (props) => {
 
-  const [toggle, setToggle] = useState(true)
+  const {show} = useAppSelector(dialogToggle)
+  const dispatch = useAppDispatch()
+
+  const onConfirmClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    dispatch(toggle())
+    props.onConfirm()
+  }
+
+  const onCancelClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    dispatch(toggle())
+    props.onCancel()
+  }
 
   return (
-    <ModalContainer show={toggle} onClick={ () => setToggle(!toggle) } >
-      <DialogWrapper onClick={ e => e.stopPropagation()} >
+    <ModalContainer show={show} onClick={(e) => dispatch(toggle())}>
+      <DialogWrapper onClick={e => e.stopPropagation()}>
         <Heading size='m'>{props.title}</Heading>
         <Text size= 'm'>{props.content}</Text>
         <ButtonContainer>
-          <Button onClick={ () => setToggle(!toggle) } >Cancel</Button>
-          <Button  variant={'primary'} onClick={ props.onConfirm }
-          >Confirm</Button>
+          <Button onClick={onCancelClick}>Cancel</Button>
+          <Button  variant={'primary'} onClick={onConfirmClick}>Confirm</Button>
         </ButtonContainer>
       </DialogWrapper>
     </ModalContainer>
