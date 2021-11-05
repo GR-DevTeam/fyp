@@ -10,8 +10,7 @@ export interface IHero {
     buttonText?: string;
     terms?: string;
     onButtonClick?: (ev: any) => any;
-    backgroundColor: 'primary' | 'secondary' | 'dark';
-    textColor: 'light' | 'dark';
+    backgroundColor: 'primary' | 'secondary' ;
 }
 
 
@@ -20,7 +19,6 @@ const Wrapper = styled.div<IHero>`
     width: 100%;
     height: 100%;
     background-color: ${ (props) => props.theme.colors[props.backgroundColor]};
-    color: ${(props) => [props.theme.colors[props.textColor]]};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,10 +31,10 @@ const Wrapper = styled.div<IHero>`
 const Hero: React.FC<IHero> = (props) => {
     return (
         <Wrapper {...props}>
-            <Heading isLight size={'l'}>{props.title}</Heading>
-            <Text isLight size={'l'}>{props.description}</Text>
+            <Heading  size={'l'}>{props.title}</Heading>
+            <Text  size={'l'}>{props.description}</Text>
             <Button isInverted>{props.buttonText}</Button>
-            <Text isLight size={'s'}>{props.terms}</Text>
+            <Text  size={'s'}>{props.terms}</Text>
             </Wrapper>
     )
 }
