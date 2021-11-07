@@ -1,10 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import menuReducer from '../features/menu/menuSlice';
+import dialogToggleReducer from '../features/dialog/dialogSlice'
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     menu: menuReducer,
+    showDialog: dialogToggleReducer
   },
 });
 
