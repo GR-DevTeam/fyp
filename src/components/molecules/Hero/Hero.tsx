@@ -10,7 +10,7 @@ export interface IHero {
     buttonText?: string;
     terms?: string;
     onButtonClick?: (ev: any) => any;
-    backgroundColor: 'primary' | 'secondary' ;
+    isSecondary?: boolean;
 }
 
 
@@ -18,7 +18,8 @@ export interface IHero {
 const Wrapper = styled.div<IHero>`
     width: 100%;
     height: 100%;
-    background-color: ${ (props) => props.theme.colors[props.backgroundColor]};
+    background-color: ${(props) =>
+    props.isSecondary ? props.theme.colors.secondary : props.theme.colors.primary};
     display: flex;
     flex-direction: column;
     justify-content: center;
